@@ -37,8 +37,12 @@ export function Portfolio() {
           <div className="relative inline-block mb-6">
             <img
               src="/Picture.jpg"
-              alt="Profile"
-              className="w-32 h-32 rounded-full object-cover border-4 border-white/20 shadow-xl"
+              alt="Professional Profile"
+              className="w-32 h-32 rounded-full object-cover border-4 border-white/20 shadow-xl mx-auto"
+              onError={(e) => {
+                // Fallback to a placeholder if image fails to load
+                e.currentTarget.src = 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop';
+              }}
             />
             <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-white/20"></div>
           </div>
