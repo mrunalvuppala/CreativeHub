@@ -1,61 +1,68 @@
 import React from 'react';
-import { ExternalLink, Github, Linkedin, Mail, MapPin, Calendar, Award } from 'lucide-react';
+import { ExternalLink, Github, Linkedin, Mail, MapPin, Calendar, Award, Code, Database, Cloud, Smartphone } from 'lucide-react';
 
 const portfolioProjects = [
   {
     id: 1,
-    title: 'Full-Stack Web Development',
-    category: 'Web Development',
+    title: 'Enterprise Web Application',
+    category: 'Full-Stack Development',
     image: 'https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg?auto=compress&cs=tinysrgb&w=800',
-    description: 'Modern web applications built with React, Node.js, and cloud technologies for scalable solutions.',
-    tags: ['React', 'Node.js', 'MongoDB', 'AWS'],
+    description: 'Scalable enterprise web application built with React, Node.js, and PostgreSQL, serving 10,000+ users with real-time features.',
+    tags: ['React', 'Node.js', 'PostgreSQL', 'Redis', 'Docker'],
     year: '2024',
   },
   {
     id: 2,
-    title: 'Mobile App Development',
+    title: 'Mobile Banking App',
     category: 'Mobile Development',
     image: 'https://images.pexels.com/photos/147413/twitter-facebook-together-exchange-of-information-147413.jpeg?auto=compress&cs=tinysrgb&w=800',
-    description: 'Cross-platform mobile applications using React Native and Flutter for iOS and Android.',
-    tags: ['React Native', 'Flutter', 'Firebase', 'API Integration'],
+    description: 'Secure mobile banking application with biometric authentication, real-time transactions, and comprehensive financial management.',
+    tags: ['React Native', 'TypeScript', 'Firebase', 'Biometric Auth'],
     year: '2024',
   },
   {
     id: 3,
-    title: 'Cloud Infrastructure',
-    category: 'DevOps',
+    title: 'Cloud Infrastructure Platform',
+    category: 'DevOps & Cloud',
     image: 'https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=800',
-    description: 'Scalable cloud infrastructure setup using AWS, Docker, and Kubernetes for enterprise applications.',
-    tags: ['AWS', 'Docker', 'Kubernetes', 'CI/CD'],
+    description: 'Automated cloud infrastructure management platform using AWS, Terraform, and Kubernetes for enterprise deployments.',
+    tags: ['AWS', 'Kubernetes', 'Terraform', 'CI/CD', 'Monitoring'],
     year: '2024',
   },
   {
     id: 4,
-    title: 'E-commerce Solutions',
-    category: 'Web Development',
-    image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800',
-    description: 'Complete e-commerce platforms with payment integration, inventory management, and analytics.',
-    tags: ['E-commerce', 'Payment Gateway', 'Analytics', 'SEO'],
+    title: 'AI-Powered Analytics Dashboard',
+    category: 'Data Science',
+    image: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800',
+    description: 'Machine learning-powered analytics dashboard providing predictive insights and real-time data visualization for business intelligence.',
+    tags: ['Python', 'TensorFlow', 'D3.js', 'FastAPI', 'ML'],
     year: '2023',
   },
   {
     id: 5,
-    title: 'Data Analytics Dashboard',
-    category: 'Data Science',
-    image: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800',
-    description: 'Interactive data visualization dashboards using Python, D3.js, and machine learning algorithms.',
-    tags: ['Python', 'D3.js', 'Machine Learning', 'Data Visualization'],
+    title: 'E-commerce Microservices',
+    category: 'Backend Architecture',
+    image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800',
+    description: 'Microservices architecture for high-traffic e-commerce platform handling 1M+ transactions daily with 99.9% uptime.',
+    tags: ['Microservices', 'GraphQL', 'MongoDB', 'RabbitMQ'],
     year: '2023',
   },
   {
     id: 6,
-    title: 'API Development',
-    category: 'Backend Development',
+    title: 'Blockchain DeFi Platform',
+    category: 'Blockchain Development',
     image: 'https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=800',
-    description: 'RESTful APIs and GraphQL services with robust authentication and real-time capabilities.',
-    tags: ['REST API', 'GraphQL', 'Authentication', 'Real-time'],
+    description: 'Decentralized finance platform with smart contracts, yield farming, and cross-chain compatibility for cryptocurrency trading.',
+    tags: ['Solidity', 'Web3.js', 'Ethereum', 'Smart Contracts'],
     year: '2023',
   },
+];
+
+const certifications = [
+  { name: 'AWS Certified Solutions Architect', issuer: 'Amazon Web Services', year: '2024' },
+  { name: 'Google Cloud Professional Developer', issuer: 'Google Cloud', year: '2023' },
+  { name: 'Certified Kubernetes Administrator', issuer: 'CNCF', year: '2023' },
+  { name: 'MongoDB Certified Developer', issuer: 'MongoDB Inc.', year: '2022' },
 ];
 
 export function Portfolio() {
@@ -66,34 +73,35 @@ export function Portfolio() {
         <div className="text-center mb-16">
           <div className="relative inline-block mb-6">
             <img
-              src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400"
+              src="/Picture.jpg"
               alt="Profile"
               className="w-32 h-32 rounded-full object-cover border-4 border-white/20 shadow-xl"
             />
             <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-white/20"></div>
           </div>
           
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Tech Professional</h1>
-          <p className="text-xl text-gray-300 mb-6">Full-Stack Developer & Technology Enthusiast</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Senior Software Engineer</h1>
+          <p className="text-xl text-gray-300 mb-6">Full-Stack Developer | Cloud Architect | Tech Lead</p>
           
           <div className="flex flex-wrap items-center justify-center gap-6 text-gray-300 mb-8">
             <div className="flex items-center">
               <MapPin className="w-4 h-4 mr-2" />
-              Available Worldwide
+              Remote | Global
             </div>
             <div className="flex items-center">
               <Calendar className="w-4 h-4 mr-2" />
-              3+ Years Experience
+              5+ Years Experience
             </div>
             <div className="flex items-center">
               <Award className="w-4 h-4 mr-2" />
-              25+ Projects Completed
+              50+ Projects Delivered
             </div>
           </div>
 
           <p className="text-lg text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed">
-            Passionate full-stack developer with expertise in modern web technologies, cloud computing, and mobile development. 
-            I specialize in building scalable applications and delivering innovative solutions that drive business growth.
+            Passionate software engineer with expertise in building scalable, high-performance applications. 
+            Specialized in full-stack development, cloud architecture, and leading technical teams to deliver 
+            innovative solutions that drive business growth and user engagement.
           </p>
 
           <div className="flex justify-center space-x-4">
@@ -108,7 +116,7 @@ export function Portfolio() {
               href="https://www.linkedin.com/in/techie05"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-md text-white rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-300"
+              className="inline-flex items-center px-4 py-2 bg-blue-600/20 backdrop-blur-md text-blue-300 rounded-lg border border-blue-500/30 hover:bg-blue-600/30 transition-all duration-300"
             >
               <Linkedin className="w-4 h-4 mr-2" />
               LinkedIn
@@ -173,17 +181,53 @@ export function Portfolio() {
           </div>
         </div>
 
+        {/* Technical Expertise */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-white mb-8 text-center">Technical Expertise</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 text-center">
+              <div className="inline-flex p-4 bg-blue-500/20 rounded-xl mb-4">
+                <Code className="w-8 h-8 text-blue-400" />
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">Frontend</h3>
+              <p className="text-gray-300 text-sm">React, Vue.js, TypeScript, Next.js, Tailwind CSS</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 text-center">
+              <div className="inline-flex p-4 bg-green-500/20 rounded-xl mb-4">
+                <Database className="w-8 h-8 text-green-400" />
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">Backend</h3>
+              <p className="text-gray-300 text-sm">Node.js, Python, Java, PostgreSQL, MongoDB</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 text-center">
+              <div className="inline-flex p-4 bg-purple-500/20 rounded-xl mb-4">
+                <Cloud className="w-8 h-8 text-purple-400" />
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">Cloud & DevOps</h3>
+              <p className="text-gray-300 text-sm">AWS, Docker, Kubernetes, Terraform, CI/CD</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 text-center">
+              <div className="inline-flex p-4 bg-orange-500/20 rounded-xl mb-4">
+                <Smartphone className="w-8 h-8 text-orange-400" />
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">Mobile</h3>
+              <p className="text-gray-300 text-sm">React Native, Flutter, iOS, Android</p>
+            </div>
+          </div>
+        </div>
+
         {/* Skills & Experience */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
-            <h3 className="text-2xl font-bold text-white mb-6">Technical Skills</h3>
+            <h3 className="text-2xl font-bold text-white mb-6">Core Skills</h3>
             <div className="space-y-4">
               {[
                 { skill: 'JavaScript/TypeScript', level: 95 },
                 { skill: 'React & Node.js', level: 92 },
-                { skill: 'Python & Data Science', level: 88 },
-                { skill: 'Cloud Technologies (AWS)', level: 85 },
-                { skill: 'Mobile Development', level: 82 },
+                { skill: 'Cloud Architecture (AWS)', level: 88 },
+                { skill: 'Database Design & Optimization', level: 90 },
+                { skill: 'System Design & Scalability', level: 87 },
+                { skill: 'DevOps & CI/CD', level: 85 },
               ].map((item) => (
                 <div key={item.skill}>
                   <div className="flex justify-between text-white mb-2">
@@ -205,45 +249,80 @@ export function Portfolio() {
             <h3 className="text-2xl font-bold text-white mb-6">Professional Experience</h3>
             <div className="space-y-6">
               <div className="border-l-2 border-primary-500 pl-4">
-                <h4 className="text-lg font-semibold text-white">Full-Stack Developer</h4>
-                <p className="text-primary-400 mb-2">Tech Solutions Inc. • 2022 - Present</p>
+                <h4 className="text-lg font-semibold text-white">Senior Software Engineer</h4>
+                <p className="text-primary-400 mb-2">Tech Innovation Corp • 2022 - Present</p>
                 <p className="text-gray-300 text-sm">
-                  Developing scalable web applications using modern frameworks, implementing cloud solutions, and leading technical initiatives.
+                  Leading development of enterprise-scale applications, architecting cloud solutions, and mentoring junior developers. 
+                  Delivered 15+ major projects with 99.9% uptime.
                 </p>
               </div>
               <div className="border-l-2 border-secondary-500 pl-4">
-                <h4 className="text-lg font-semibold text-white">Software Engineer</h4>
-                <p className="text-secondary-400 mb-2">Innovation Labs • 2021 - 2022</p>
+                <h4 className="text-lg font-semibold text-white">Full-Stack Developer</h4>
+                <p className="text-secondary-400 mb-2">Digital Solutions Ltd • 2020 - 2022</p>
                 <p className="text-gray-300 text-sm">
-                  Built mobile applications and APIs, collaborated with cross-functional teams, and optimized application performance.
+                  Built scalable web applications serving 100K+ users, implemented microservices architecture, 
+                  and optimized database performance by 40%.
                 </p>
               </div>
               <div className="border-l-2 border-accent-500 pl-4">
-                <h4 className="text-lg font-semibold text-white">Junior Developer</h4>
-                <p className="text-accent-400 mb-2">StartUp Ventures • 2020 - 2021</p>
+                <h4 className="text-lg font-semibold text-white">Software Developer</h4>
+                <p className="text-accent-400 mb-2">StartUp Ventures • 2019 - 2020</p>
                 <p className="text-gray-300 text-sm">
-                  Contributed to various projects, learned modern development practices, and gained experience in agile methodologies.
+                  Developed mobile applications and RESTful APIs, collaborated in agile teams, 
+                  and contributed to product strategy and technical decisions.
                 </p>
               </div>
             </div>
           </div>
         </div>
 
+        {/* Certifications */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-white mb-8 text-center">Certifications</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {certifications.map((cert, index) => (
+              <div key={index} className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-1">{cert.name}</h3>
+                    <p className="text-gray-300 text-sm">{cert.issuer}</p>
+                  </div>
+                  <div className="text-right">
+                    <span className="px-3 py-1 bg-green-500/20 text-green-400 text-xs font-medium rounded-full">
+                      {cert.year}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Contact CTA */}
         <div className="text-center bg-gradient-to-r from-primary-500/20 via-secondary-500/20 to-accent-500/20 backdrop-blur-md rounded-3xl p-12 border border-white/20">
-          <h2 className="text-3xl font-bold text-white mb-4">Let's Build Something Amazing</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">Let's Build Something Extraordinary</h2>
           <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-            Ready to collaborate on your next project? I'm passionate about creating innovative solutions and would love to discuss how we can work together.
+            Ready to collaborate on innovative projects? I'm passionate about solving complex technical challenges 
+            and building scalable solutions that make a real impact. Let's discuss your next big idea.
           </p>
-          <a
-            href="https://www.linkedin.com/in/techie05"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-500 to-secondary-500 text-white rounded-xl font-semibold text-lg hover:shadow-2xl hover:shadow-primary-500/25 transition-all duration-300 transform hover:-translate-y-1"
-          >
-            <Linkedin className="w-5 h-5 mr-2" />
-            Connect on LinkedIn
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="https://www.linkedin.com/in/techie05"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-500 to-secondary-500 text-white rounded-xl font-semibold text-lg hover:shadow-2xl hover:shadow-primary-500/25 transition-all duration-300 transform hover:-translate-y-1"
+            >
+              <Linkedin className="w-5 h-5 mr-2" />
+              Connect on LinkedIn
+            </a>
+            <a
+              href="#"
+              className="inline-flex items-center px-8 py-4 bg-white/10 backdrop-blur-md text-white rounded-xl font-semibold text-lg border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-1"
+            >
+              <Mail className="w-5 h-5 mr-2" />
+              Send Message
+            </a>
+          </div>
         </div>
       </div>
     </div>
