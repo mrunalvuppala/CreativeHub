@@ -4,56 +4,56 @@ import { ExternalLink, Github, Linkedin, Mail, MapPin, Calendar, Award } from 'l
 const portfolioProjects = [
   {
     id: 1,
-    title: 'Brand Identity Design',
-    category: 'Design',
-    image: 'https://images.pexels.com/photos/3695297/pexels-photo-3695297.jpeg?auto=compress&cs=tinysrgb&w=800',
-    description: 'Complete brand identity system including logo, colors, and typography for a modern tech startup.',
-    tags: ['Branding', 'Logo Design', 'Typography'],
+    title: 'Full-Stack Web Development',
+    category: 'Web Development',
+    image: 'https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg?auto=compress&cs=tinysrgb&w=800',
+    description: 'Modern web applications built with React, Node.js, and cloud technologies for scalable solutions.',
+    tags: ['React', 'Node.js', 'MongoDB', 'AWS'],
     year: '2024',
   },
   {
     id: 2,
-    title: 'E-commerce Platform',
-    category: 'Web Design',
-    image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800',
-    description: 'Modern e-commerce platform design with focus on conversion optimization and user experience.',
-    tags: ['E-commerce', 'UI/UX', 'Web Design'],
+    title: 'Mobile App Development',
+    category: 'Mobile Development',
+    image: 'https://images.pexels.com/photos/147413/twitter-facebook-together-exchange-of-information-147413.jpeg?auto=compress&cs=tinysrgb&w=800',
+    description: 'Cross-platform mobile applications using React Native and Flutter for iOS and Android.',
+    tags: ['React Native', 'Flutter', 'Firebase', 'API Integration'],
     year: '2024',
   },
   {
     id: 3,
-    title: 'Mobile App UI/UX',
-    category: 'UI/UX',
-    image: 'https://images.pexels.com/photos/147413/twitter-facebook-together-exchange-of-information-147413.jpeg?auto=compress&cs=tinysrgb&w=800',
-    description: 'User interface and experience design for a social media mobile application.',
-    tags: ['Mobile UI', 'UX Design', 'Prototyping'],
+    title: 'Cloud Infrastructure',
+    category: 'DevOps',
+    image: 'https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=800',
+    description: 'Scalable cloud infrastructure setup using AWS, Docker, and Kubernetes for enterprise applications.',
+    tags: ['AWS', 'Docker', 'Kubernetes', 'CI/CD'],
     year: '2024',
   },
   {
     id: 4,
-    title: 'Photography Portfolio',
-    category: 'Photography',
-    image: 'https://images.pexels.com/photos/1264210/pexels-photo-1264210.jpeg?auto=compress&cs=tinysrgb&w=800',
-    description: 'Creative photography portfolio showcasing various styles and techniques.',
-    tags: ['Portrait', 'Landscape', 'Street Photography'],
+    title: 'E-commerce Solutions',
+    category: 'Web Development',
+    image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800',
+    description: 'Complete e-commerce platforms with payment integration, inventory management, and analytics.',
+    tags: ['E-commerce', 'Payment Gateway', 'Analytics', 'SEO'],
     year: '2023',
   },
   {
     id: 5,
-    title: 'Website Redesign',
-    category: 'Web Design',
-    image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800',
-    description: 'Complete website redesign focusing on user experience and modern design principles.',
-    tags: ['Web Design', 'Responsive', 'User Experience'],
+    title: 'Data Analytics Dashboard',
+    category: 'Data Science',
+    image: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800',
+    description: 'Interactive data visualization dashboards using Python, D3.js, and machine learning algorithms.',
+    tags: ['Python', 'D3.js', 'Machine Learning', 'Data Visualization'],
     year: '2023',
   },
   {
     id: 6,
-    title: 'Logo Design Collection',
-    category: 'Design',
-    image: 'https://images.pexels.com/photos/3849167/pexels-photo-3849167.jpeg?auto=compress&cs=tinysrgb&w=800',
-    description: 'Collection of various logo designs for different industries and clients.',
-    tags: ['Logo Design', 'Branding', 'Identity'],
+    title: 'API Development',
+    category: 'Backend Development',
+    image: 'https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=800',
+    description: 'RESTful APIs and GraphQL services with robust authentication and real-time capabilities.',
+    tags: ['REST API', 'GraphQL', 'Authentication', 'Real-time'],
     year: '2023',
   },
 ];
@@ -66,34 +66,34 @@ export function Portfolio() {
         <div className="text-center mb-16">
           <div className="relative inline-block mb-6">
             <img
-              src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&w=400"
+              src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400"
               alt="Profile"
               className="w-32 h-32 rounded-full object-cover border-4 border-white/20 shadow-xl"
             />
             <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-white/20"></div>
           </div>
           
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Alex Johnson</h1>
-          <p className="text-xl text-gray-300 mb-6">Creative Designer & Digital Artist</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Tech Professional</h1>
+          <p className="text-xl text-gray-300 mb-6">Full-Stack Developer & Technology Enthusiast</p>
           
           <div className="flex flex-wrap items-center justify-center gap-6 text-gray-300 mb-8">
             <div className="flex items-center">
               <MapPin className="w-4 h-4 mr-2" />
-              San Francisco, CA
+              Available Worldwide
             </div>
             <div className="flex items-center">
               <Calendar className="w-4 h-4 mr-2" />
-              5+ Years Experience
+              3+ Years Experience
             </div>
             <div className="flex items-center">
               <Award className="w-4 h-4 mr-2" />
-              50+ Projects Completed
+              25+ Projects Completed
             </div>
           </div>
 
           <p className="text-lg text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed">
-            Passionate creative professional specializing in brand identity, web design, and digital experiences. 
-            I help businesses tell their story through thoughtful design and innovative solutions.
+            Passionate full-stack developer with expertise in modern web technologies, cloud computing, and mobile development. 
+            I specialize in building scalable applications and delivering innovative solutions that drive business growth.
           </p>
 
           <div className="flex justify-center space-x-4">
@@ -125,7 +125,7 @@ export function Portfolio() {
 
         {/* Portfolio Grid */}
         <div className="mb-16">
-          <h2 className="text-3xl font-bold text-white mb-8 text-center">Featured Work</h2>
+          <h2 className="text-3xl font-bold text-white mb-8 text-center">Featured Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {portfolioProjects.map((project) => (
               <div key={project.id} className="group relative bg-white/10 backdrop-blur-md rounded-2xl overflow-hidden border border-white/20 hover:bg-white/15 hover:border-white/30 transition-all duration-300 hover:-translate-y-2">
@@ -176,14 +176,14 @@ export function Portfolio() {
         {/* Skills & Experience */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
-            <h3 className="text-2xl font-bold text-white mb-6">Skills & Expertise</h3>
+            <h3 className="text-2xl font-bold text-white mb-6">Technical Skills</h3>
             <div className="space-y-4">
               {[
-                { skill: 'Brand Identity Design', level: 95 },
-                { skill: 'Web Design & UI/UX', level: 90 },
-                { skill: 'Digital Photography', level: 85 },
-                { skill: 'Motion Graphics', level: 80 },
-                { skill: 'Creative Direction', level: 88 },
+                { skill: 'JavaScript/TypeScript', level: 95 },
+                { skill: 'React & Node.js', level: 92 },
+                { skill: 'Python & Data Science', level: 88 },
+                { skill: 'Cloud Technologies (AWS)', level: 85 },
+                { skill: 'Mobile Development', level: 82 },
               ].map((item) => (
                 <div key={item.skill}>
                   <div className="flex justify-between text-white mb-2">
@@ -202,27 +202,27 @@ export function Portfolio() {
           </div>
 
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
-            <h3 className="text-2xl font-bold text-white mb-6">Experience</h3>
+            <h3 className="text-2xl font-bold text-white mb-6">Professional Experience</h3>
             <div className="space-y-6">
               <div className="border-l-2 border-primary-500 pl-4">
-                <h4 className="text-lg font-semibold text-white">Senior Designer</h4>
-                <p className="text-primary-400 mb-2">Creative Agency Pro • 2022 - Present</p>
+                <h4 className="text-lg font-semibold text-white">Full-Stack Developer</h4>
+                <p className="text-primary-400 mb-2">Tech Solutions Inc. • 2022 - Present</p>
                 <p className="text-gray-300 text-sm">
-                  Leading design projects for major brands, managing client relationships, and mentoring junior designers.
+                  Developing scalable web applications using modern frameworks, implementing cloud solutions, and leading technical initiatives.
                 </p>
               </div>
               <div className="border-l-2 border-secondary-500 pl-4">
-                <h4 className="text-lg font-semibold text-white">UI/UX Designer</h4>
-                <p className="text-secondary-400 mb-2">Tech Startup Inc. • 2020 - 2022</p>
+                <h4 className="text-lg font-semibold text-white">Software Engineer</h4>
+                <p className="text-secondary-400 mb-2">Innovation Labs • 2021 - 2022</p>
                 <p className="text-gray-300 text-sm">
-                  Designed user interfaces for web and mobile applications, conducted user research and usability testing.
+                  Built mobile applications and APIs, collaborated with cross-functional teams, and optimized application performance.
                 </p>
               </div>
               <div className="border-l-2 border-accent-500 pl-4">
-                <h4 className="text-lg font-semibold text-white">Freelance Designer</h4>
-                <p className="text-accent-400 mb-2">Self-Employed • 2018 - 2020</p>
+                <h4 className="text-lg font-semibold text-white">Junior Developer</h4>
+                <p className="text-accent-400 mb-2">StartUp Ventures • 2020 - 2021</p>
                 <p className="text-gray-300 text-sm">
-                  Provided design services to small businesses and startups, specializing in brand identity and web design.
+                  Contributed to various projects, learned modern development practices, and gained experience in agile methodologies.
                 </p>
               </div>
             </div>
@@ -231,9 +231,9 @@ export function Portfolio() {
 
         {/* Contact CTA */}
         <div className="text-center bg-gradient-to-r from-primary-500/20 via-secondary-500/20 to-accent-500/20 backdrop-blur-md rounded-3xl p-12 border border-white/20">
-          <h2 className="text-3xl font-bold text-white mb-4">Let's Work Together</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">Let's Build Something Amazing</h2>
           <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-            Ready to bring your creative vision to life? I'm always open to discussing new projects and opportunities.
+            Ready to collaborate on your next project? I'm passionate about creating innovative solutions and would love to discuss how we can work together.
           </p>
           <a
             href="https://www.linkedin.com/in/techie05"
