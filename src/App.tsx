@@ -10,6 +10,8 @@ import { Dashboard } from './pages/Dashboard';
 import { Projects } from './pages/Projects';
 import { Portfolio } from './pages/Portfolio';
 import { BoltBadge } from './components/ui/BoltBadge';
+import { Toast } from './components/ui/Toast';
+import { useToast } from './hooks/useToast';
 
 function HomePage() {
   return (
@@ -23,6 +25,8 @@ function HomePage() {
 }
 
 function App() {
+  const { toast, showToast, hideToast } = useToast();
+
   return (
     <Router>
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
@@ -35,6 +39,12 @@ function App() {
         </Routes>
         <Footer />
         <BoltBadge />
+        <Toast
+          message={toast.message}
+          type={toast.type}
+          isVisible={toast.isVisible}
+          onClose={hideToast}
+        />
       </div>
     </Router>
   );
