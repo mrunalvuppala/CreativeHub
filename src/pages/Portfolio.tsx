@@ -105,7 +105,9 @@ export function Portfolio() {
               GitHub
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/techie05"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-md text-white rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-300"
             >
               <Linkedin className="w-4 h-4 mr-2" />
@@ -234,11 +236,13 @@ export function Portfolio() {
             Ready to bring your creative vision to life? I'm always open to discussing new projects and opportunities.
           </p>
           <a
-            href="#"
+            href="https://www.linkedin.com/in/techie05"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-500 to-secondary-500 text-white rounded-xl font-semibold text-lg hover:shadow-2xl hover:shadow-primary-500/25 transition-all duration-300 transform hover:-translate-y-1"
           >
-            <Mail className="w-5 h-5 mr-2" />
-            Get In Touch
+            <Linkedin className="w-5 h-5 mr-2" />
+            Connect on LinkedIn
           </a>
         </div>
       </div>
