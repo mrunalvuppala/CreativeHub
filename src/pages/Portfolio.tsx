@@ -1,62 +1,7 @@
 import React from 'react';
-import { ExternalLink, Github, Linkedin, Mail, MapPin, Calendar, Award, Code, Database, Cloud, Smartphone } from 'lucide-react';
-
-const portfolioProjects = [
-  {
-    id: 1,
-    title: 'Enterprise Web Application',
-    category: 'Full-Stack Development',
-    image: 'https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg?auto=compress&cs=tinysrgb&w=800',
-    description: 'Scalable enterprise web application built with React, Node.js, and PostgreSQL, serving 10,000+ users with real-time features.',
-    tags: ['React', 'Node.js', 'PostgreSQL', 'Redis', 'Docker'],
-    year: '2024',
-  },
-  {
-    id: 2,
-    title: 'Mobile Banking App',
-    category: 'Mobile Development',
-    image: 'https://images.pexels.com/photos/147413/twitter-facebook-together-exchange-of-information-147413.jpeg?auto=compress&cs=tinysrgb&w=800',
-    description: 'Secure mobile banking application with biometric authentication, real-time transactions, and comprehensive financial management.',
-    tags: ['React Native', 'TypeScript', 'Firebase', 'Biometric Auth'],
-    year: '2024',
-  },
-  {
-    id: 3,
-    title: 'Cloud Infrastructure Platform',
-    category: 'DevOps & Cloud',
-    image: 'https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=800',
-    description: 'Automated cloud infrastructure management platform using AWS, Terraform, and Kubernetes for enterprise deployments.',
-    tags: ['AWS', 'Kubernetes', 'Terraform', 'CI/CD', 'Monitoring'],
-    year: '2024',
-  },
-  {
-    id: 4,
-    title: 'AI-Powered Analytics Dashboard',
-    category: 'Data Science',
-    image: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800',
-    description: 'Machine learning-powered analytics dashboard providing predictive insights and real-time data visualization for business intelligence.',
-    tags: ['Python', 'TensorFlow', 'D3.js', 'FastAPI', 'ML'],
-    year: '2023',
-  },
-  {
-    id: 5,
-    title: 'E-commerce Microservices',
-    category: 'Backend Architecture',
-    image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800',
-    description: 'Microservices architecture for high-traffic e-commerce platform handling 1M+ transactions daily with 99.9% uptime.',
-    tags: ['Microservices', 'GraphQL', 'MongoDB', 'RabbitMQ'],
-    year: '2023',
-  },
-  {
-    id: 6,
-    title: 'Blockchain DeFi Platform',
-    category: 'Blockchain Development',
-    image: 'https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=800',
-    description: 'Decentralized finance platform with smart contracts, yield farming, and cross-chain compatibility for cryptocurrency trading.',
-    tags: ['Solidity', 'Web3.js', 'Ethereum', 'Smart Contracts'],
-    year: '2023',
-  },
-];
+import { ExternalLink, Github, Linkedin, Mail, MapPin, Calendar, Award, Code, Database, Cloud, Smartphone, Heart, Eye, Plus } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { useProjects } from '../hooks/useProjects';
 
 const certifications = [
   { name: 'AWS Certified Solutions Architect', issuer: 'Amazon Web Services', year: '2024' },
@@ -66,6 +11,24 @@ const certifications = [
 ];
 
 export function Portfolio() {
+  const { projects, likeProject, viewProject } = useProjects();
+  
+  // Get published projects for portfolio display
+  const publishedProjects = projects.filter(project => project.status === 'Published');
+  
+  // Calculate portfolio stats from real data
+  const totalViews = projects.reduce((sum, p) => sum + p.views, 0);
+  const totalLikes = projects.reduce((sum, p) => sum + p.likes, 0);
+  const totalProjects = publishedProjects.length;
+
+  const handleViewProject = (id: number) => {
+    viewProject(id);
+  };
+
+  const handleLikeProject = (id: number) => {
+    likeProject(id);
+  };
+
   return (
     <div className="min-h-screen pt-20 pb-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
@@ -94,7 +57,23 @@ export function Portfolio() {
             </div>
             <div className="flex items-center">
               <Award className="w-4 h-4 mr-2" />
-              50+ Projects Delivered
+              {totalProjects}+ Projects Delivered
+            </div>
+          </div>
+
+          {/* Real-time Portfolio Stats */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto mb-8">
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20">
+              <div className="text-2xl font-bold text-white">{totalProjects}</div>
+              <div className="text-gray-300 text-sm">Published Projects</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20">
+              <div className="text-2xl font-bold text-white">{totalViews.toLocaleString()}</div>
+              <div className="text-gray-300 text-sm">Total Views</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20">
+              <div className="text-2xl font-bold text-white">{totalLikes}</div>
+              <div className="text-gray-300 text-sm">Total Likes</div>
             </div>
           </div>
 
@@ -131,82 +110,146 @@ export function Portfolio() {
           </div>
         </div>
 
-        {/* Portfolio Grid */}
+        {/* Portfolio Grid - Real Projects */}
         <div className="mb-16">
-          <h2 className="text-3xl font-bold text-white mb-8 text-center">Featured Projects</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {portfolioProjects.map((project) => (
-              <div key={project.id} className="group relative bg-white/10 backdrop-blur-md rounded-2xl overflow-hidden border border-white/20 hover:bg-white/15 hover:border-white/30 transition-all duration-300 hover:-translate-y-2">
-                <div className="relative overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="absolute bottom-4 right-4">
-                      <button className="p-3 bg-white/20 backdrop-blur-md rounded-full text-white hover:bg-white/30 transition-colors">
-                        <ExternalLink className="w-5 h-5" />
-                      </button>
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-3xl font-bold text-white">Featured Projects</h2>
+            <Link
+              to="/projects"
+              className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-primary-500 to-secondary-500 text-white rounded-lg font-medium hover:shadow-lg transition-all duration-300"
+            >
+              <Plus className="w-4 h-4 mr-2" />
+              Manage Projects
+            </Link>
+          </div>
+          
+          {publishedProjects.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {publishedProjects.map((project) => (
+                <div key={project.id} className="group relative bg-white/10 backdrop-blur-md rounded-2xl overflow-hidden border border-white/20 hover:bg-white/15 hover:border-white/30 transition-all duration-300 hover:-translate-y-2">
+                  <div className="relative overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="absolute bottom-4 right-4 flex space-x-2">
+                        <button
+                          onClick={() => handleViewProject(project.id)}
+                          className="p-3 bg-white/20 backdrop-blur-md rounded-full text-white hover:bg-white/30 transition-colors group/btn"
+                          title="View Project"
+                        >
+                          <Eye className="w-5 h-5 group-hover/btn:scale-110 transition-transform" />
+                        </button>
+                        <button
+                          onClick={() => handleLikeProject(project.id)}
+                          className="p-3 bg-white/20 backdrop-blur-md rounded-full text-red-400 hover:bg-white/30 transition-colors group/btn"
+                          title="Like Project"
+                        >
+                          <Heart className="w-5 h-5 group-hover/btn:scale-110 transition-transform" />
+                        </button>
+                      </div>
+                    </div>
+                    <div className="absolute top-4 left-4">
+                      <span className="px-3 py-1 bg-black/50 backdrop-blur-md text-white text-xs font-medium rounded-full">
+                        {project.category}
+                      </span>
+                    </div>
+                    <div className="absolute top-4 right-4">
+                      <span className="px-3 py-1 bg-black/50 backdrop-blur-md text-white text-xs font-medium rounded-full">
+                        {new Date(project.date).getFullYear()}
+                      </span>
                     </div>
                   </div>
-                  <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 bg-black/50 backdrop-blur-md text-white text-xs font-medium rounded-full">
-                      {project.category}
-                    </span>
-                  </div>
-                  <div className="absolute top-4 right-4">
-                    <span className="px-3 py-1 bg-black/50 backdrop-blur-md text-white text-xs font-medium rounded-full">
-                      {project.year}
-                    </span>
+                  
+                  <div className="p-6">
+                    <h3 className="text-lg font-semibold text-white mb-3">{project.title}</h3>
+                    <p className="text-gray-300 text-sm mb-4 line-clamp-2">{project.description}</p>
+                    
+                    {/* Project Stats */}
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center space-x-4 text-sm text-gray-400">
+                        <div className="flex items-center">
+                          <Eye className="w-4 h-4 mr-1" />
+                          {project.views}
+                        </div>
+                        <div className="flex items-center">
+                          <Heart className="w-4 h-4 mr-1" />
+                          {project.likes}
+                        </div>
+                      </div>
+                      <div className="text-xs text-gray-400">
+                        {new Date(project.date).toLocaleDateString()}
+                      </div>
+                    </div>
+                    
+                    {/* Project Tags */}
+                    {project.tags && project.tags.length > 0 && (
+                      <div className="flex flex-wrap gap-2">
+                        {project.tags.slice(0, 3).map((tag) => (
+                          <span
+                            key={tag}
+                            className="px-2 py-1 bg-primary-500/20 text-primary-300 text-xs rounded-md"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                        {project.tags.length > 3 && (
+                          <span className="px-2 py-1 bg-gray-500/20 text-gray-400 text-xs rounded-md">
+                            +{project.tags.length - 3} more
+                          </span>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </div>
-                
-                <div className="p-6">
-                  <h3 className="text-lg font-semibold text-white mb-3">{project.title}</h3>
-                  <p className="text-gray-300 text-sm mb-4 line-clamp-2">{project.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-2 py-1 bg-primary-500/20 text-primary-300 text-xs rounded-md"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-16 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20">
+              <div className="w-16 h-16 bg-gray-600/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Plus className="w-8 h-8 text-gray-400" />
               </div>
-            ))}
-          </div>
+              <h3 className="text-lg font-medium text-white mb-2">No Published Projects</h3>
+              <p className="text-gray-400 mb-6">Create and publish projects to showcase them in your portfolio</p>
+              <Link
+                to="/projects"
+                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary-500 to-secondary-500 text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
+              >
+                <Plus className="w-4 h-4 mr-2" />
+                Create Your First Project
+              </Link>
+            </div>
+          )}
         </div>
 
         {/* Technical Expertise */}
         <div className="mb-16">
           <h2 className="text-3xl font-bold text-white mb-8 text-center">Technical Expertise</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 text-center">
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 text-center hover:bg-white/15 transition-all duration-300">
               <div className="inline-flex p-4 bg-blue-500/20 rounded-xl mb-4">
                 <Code className="w-8 h-8 text-blue-400" />
               </div>
               <h3 className="text-lg font-semibold text-white mb-2">Frontend</h3>
               <p className="text-gray-300 text-sm">React, Vue.js, TypeScript, Next.js, Tailwind CSS</p>
             </div>
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 text-center">
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 text-center hover:bg-white/15 transition-all duration-300">
               <div className="inline-flex p-4 bg-green-500/20 rounded-xl mb-4">
                 <Database className="w-8 h-8 text-green-400" />
               </div>
               <h3 className="text-lg font-semibold text-white mb-2">Backend</h3>
               <p className="text-gray-300 text-sm">Node.js, Python, Java, PostgreSQL, MongoDB</p>
             </div>
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 text-center">
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 text-center hover:bg-white/15 transition-all duration-300">
               <div className="inline-flex p-4 bg-purple-500/20 rounded-xl mb-4">
                 <Cloud className="w-8 h-8 text-purple-400" />
               </div>
               <h3 className="text-lg font-semibold text-white mb-2">Cloud & DevOps</h3>
               <p className="text-gray-300 text-sm">AWS, Docker, Kubernetes, Terraform, CI/CD</p>
             </div>
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 text-center">
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 text-center hover:bg-white/15 transition-all duration-300">
               <div className="inline-flex p-4 bg-orange-500/20 rounded-xl mb-4">
                 <Smartphone className="w-8 h-8 text-orange-400" />
               </div>
@@ -322,6 +365,13 @@ export function Portfolio() {
               <Mail className="w-5 h-5 mr-2" />
               Send Message
             </a>
+            <Link
+              to="/projects"
+              className="inline-flex items-center px-8 py-4 bg-white/10 backdrop-blur-md text-white rounded-xl font-semibold text-lg border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-1"
+            >
+              <Plus className="w-5 h-5 mr-2" />
+              View All Projects
+            </Link>
           </div>
         </div>
       </div>
